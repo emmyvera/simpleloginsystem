@@ -3,9 +3,9 @@ CREATE TABLE `user`.`users` (
     `username` VARCHAR(50) NOT NULL , 
     `password` VARCHAR(20) NOT NULL , 
     `gmail` VARCHAR(100) NOT NULL , 
-    `phoneNo` VARCHAR(15) NOT NULL , 
-    `DOB` DATE NOT NULL , 
-    `image_url` VARCHAR(255) NOT NULL , 
+    `phoneNo` VARCHAR(15) NULL , 
+    `DOB` DATE NULL , 
+    `image_url` VARCHAR(255) NULL , 
     PRIMARY KEY (`id`), 
     UNIQUE `username` (`username`)) 
     ENGINE = InnoDB;
