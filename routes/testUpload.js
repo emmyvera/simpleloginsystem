@@ -30,7 +30,7 @@ const fileFilter = (req, file, cb) =>{
 const upload = multer({storage:storage, fileFilter:fileFilter})
 
 router.post("/", upload.single("image"), async(req, res) => {
-    res.send(req.file)
+    res.send(req.file.filename)
 })
 
 module.exports = router

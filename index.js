@@ -1,11 +1,11 @@
 const express = require("express")
 const app = express()
 const db = require("./database/daConnection")
-const multer = require("multer")
 
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static(__dirname))
+
 require("dotenv").config();
 
 db.connect(async(err) => {
@@ -18,6 +18,9 @@ db.connect(async(err) => {
 //All Route
 const registration = require("./routes/users/resgister")
 app.use("/register", registration)
+
+const login = require("./routes/users/login")
+app.use("/login", login)
 
 const upImage = require("./routes/testUpload")
 app.use("/up", upImage)
