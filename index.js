@@ -22,6 +22,9 @@ app.use("/register", registration)
 const login = require("./routes/users/login")
 app.use("/login", login)
 
+const userdetails = require("./routes/users/details")
+app.use("/userdetails", userdetails)
+
 const upImage = require("./routes/testUpload")
 app.use("/up", upImage)
 
